@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Collectible{% endblock %}
+
+{% block body %}
+    <h1>Edit Collectible</h1>
+
+    {{ include('collectible/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('collectible_index') }}">back to list</a>
+
+    {{ include('collectible/_delete_form.html.twig') }}
+{% endblock %}

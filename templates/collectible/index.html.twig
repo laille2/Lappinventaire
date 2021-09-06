@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collectible index{% endblock %}
+
+{% block body %}
+    <h1>Collectible index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Properties</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for collectible in collectibles %}
+            <tr>
+                <td>{{ collectible.id }}</td>
+                <td>{{ collectible.name }}</td>
+                <td>{{ collectible.properties ? collectible.properties|json_encode : '' }}</td>
+                <td>
+                    <a href="{{ path('collectible_show', {'id': collectible.id}) }}">show</a>
+                    <a href="{{ path('collectible_edit', {'id': collectible.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('collectible_new') }}">Create new</a>
+{% endblock %}

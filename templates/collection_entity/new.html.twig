@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CollectionEntity{% endblock %}
+
+{% block body %}
+    <h1>Create new CollectionEntity</h1>
+
+    {{ include('collection_entity/_form.html.twig') }}
+
+    <a href="{{ path('collection_entity_index') }}">back to list</a>
+{% endblock %}
