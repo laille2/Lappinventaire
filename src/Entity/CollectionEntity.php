@@ -29,6 +29,11 @@ class CollectionEntity
      */
     private $collectibles;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="collectionEntitys")
+     */
+    private $user;
+
     public function __construct()
     {
         $this->collectibles = new ArrayCollection();
@@ -71,6 +76,18 @@ class CollectionEntity
     public function removeCollectible(Collectible $collectible): self
     {
         $this->collectibles->removeElement($collectible);
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

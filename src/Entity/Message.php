@@ -18,14 +18,9 @@ class Message
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $author;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $receiver;
+    private $receiverUsername;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -37,31 +32,36 @@ class Message
      */
     private $createdAt;
 
+    /**
+     * @ORM\Column(type="string", nullable=false)
+     */
+    private $authorUsername;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getAuthor(): ?string
+    public function getAuthorUsername(): ?string
     {
-        return $this->author;
+        return $this->authorUsername;
     }
 
-    public function setAuthor(string $author): self
+    public function setAuthorUsername(string $authorUsername): self
     {
-        $this->author = $author;
+        $this->authorUsername = $authorUsername;
 
         return $this;
     }
 
-    public function getReceiver(): ?string
+    public function getReceiverUsername(): ?string
     {
-        return $this->receiver;
+        return $this->receiverUsername;
     }
 
-    public function setReceiver(?string $receiver): self
+    public function setReceiverUsername(?string $receiverUsername): self
     {
-        $this->receiver = $receiver;
+        $this->receiverUsername = $receiverUsername;
 
         return $this;
     }
@@ -89,4 +89,5 @@ class Message
 
         return $this;
     }
+
 }
