@@ -187,7 +187,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "5.3",
-            "ref": "772b77cfb5017644547ef7f9364c54e4eb9a6c61"
+            "ref": "414ba00ad43fa71be42c7906a551f1831716b03c"
         },
         "files": [
             "./config/packages/cache.yaml",
@@ -371,6 +371,9 @@
     },
     "symfony/yaml": {
         "version": "v5.3.6"
+    },
+    "twbs/bootstrap": {
+        "version": "v5.1.0"
     },
     "twig/extra-bundle": {
         "version": "v3.3.1"

@@ -1,0 +1,28 @@
+body {
+    background-color: var(--first-rgb);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+div.title {
+  display: flex;
+  place-items: center;
+  height: 500px;
+}
+
+h1.title {
+  color: var(--first-rgb);
+  padding: 2px;
+  font-style: oblique;
+  text-shadow: 4px 4px 0px var(--second-rgb);
+  opacity: 1;
+  font-size: 250%;
+}
+
+div.imageFond {
+  display: flex;
+  justify-content: center;
+  background-image: url('../images/books-1281581_1920.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
