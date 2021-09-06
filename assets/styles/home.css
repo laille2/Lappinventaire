@@ -1,20 +1,19 @@
 :root {
-  --first-rgb: #ffe7a9;
+  --first-rgb: #f7d49e;
   --second-rgb: #300c0a;
   --third-rgb: 147, 52, 19;
+  --image-ratio: 1920/728;
 }
 
 body {
     background-color: var(--first-rgb);
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 div.title {
-  margin-top: -100vh;
-  margin-bottom: 100vh;
   display: flex;
-  justify-content:center;
-  background-color: rgba(var(--third-rgb), 0.3) ;
+  place-items: center;
+  height: 500px;
 }
 
 h1.title {
@@ -23,7 +22,16 @@ h1.title {
   font-style: oblique;
   text-shadow: 4px 4px 0px var(--second-rgb);
   opacity: 1;
-  text-align: center;
+  font-size: 250%;
+}
+
+div.imageFond {
+  display: flex;
+  justify-content: center;
+  background-image: url('../images/books-1281581_1920.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 
 .navbar {
