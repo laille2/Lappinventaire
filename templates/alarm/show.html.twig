@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alarm{% endblock %}
+
+{% block body %}
+    <h1>Alarm</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ alarm.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ alarm.type }}</td>
+            </tr>
+            <tr>
+                <th>Properties</th>
+                <td>{{ alarm.properties ? alarm.properties|json_encode : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('alarm_index') }}">back to list</a>
+
+    <a href="{{ path('alarm_edit', {'id': alarm.id}) }}">edit</a>
+
+    {{ include('alarm/_delete_form.html.twig') }}
+{% endblock %}

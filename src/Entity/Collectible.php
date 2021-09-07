@@ -34,9 +34,15 @@ class Collectible
      */
     private $collectionEntities;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Alarm::class, mappedBy="collectibles")
+     */
+    private $alarms;
+
     public function __construct()
     {
         $this->collectionEntities = new ArrayCollection();
+        $this->alarms = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -90,6 +96,33 @@ class Collectible
     {
         if ($this->collectionEntities->removeElement($collectionEntity)) {
             $collectionEntity->removeCollectible($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Alarm[]
+     */
+    public function getAlarms(): Collection
+    {
+        return $this->alarms;
+    }
+
+    public function addAlarm(Alarm $alarm): self
+    {
+        if (!$this->alarms->contains($alarm)) {
+            $this->alarms[] = $alarm;
+            $alarm->addCollectible($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAlarm(Alarm $alarm): self
+    {
+        if ($this->alarms->removeElement($alarm)) {
+            $alarm->removeCollectible($this);
         }
 
         return $this;

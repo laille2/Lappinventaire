@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alarm index{% endblock %}
+
+{% block body %}
+    <h1>Alarm index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Properties</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for alarm in alarms %}
+            <tr>
+                <td>{{ alarm.id }}</td>
+                <td>{{ alarm.type }}</td>
+                <td>{{ alarm.properties ? alarm.properties|json_encode : '' }}</td>
+                <td>
+                    <a href="{{ path('alarm_show', {'id': alarm.id}) }}">show</a>
+                    <a href="{{ path('alarm_edit', {'id': alarm.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('alarm_new') }}">Create new</a>
+{% endblock %}

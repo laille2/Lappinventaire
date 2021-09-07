@@ -34,9 +34,15 @@ class CollectionEntity
      */
     private $user;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Alarm::class, mappedBy="collectionEntitys")
+     */
+    private $alarms;
+
     public function __construct()
     {
         $this->collectibles = new ArrayCollection();
+        $this->alarms = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -88,6 +94,33 @@ class CollectionEntity
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Alarm[]
+     */
+    public function getAlarms(): Collection
+    {
+        return $this->alarms;
+    }
+
+    public function addAlarm(Alarm $alarm): self
+    {
+        if (!$this->alarms->contains($alarm)) {
+            $this->alarms[] = $alarm;
+            $alarm->addCollectionEntity($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAlarm(Alarm $alarm): self
+    {
+        if ($this->alarms->removeElement($alarm)) {
+            $alarm->removeCollectionEntity($this);
+        }
 
         return $this;
     }

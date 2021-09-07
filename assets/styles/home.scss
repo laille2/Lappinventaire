@@ -26,3 +26,12 @@ div.imageFond {
   background-position: center;
   z-index: -1;
 }
+
+.navbar {
+  opacity: 0.6;
+  background-color: var(--second-rgb) !important; 
+}
+
+.navbar:hover {
+  opacity: 0.9;
+}

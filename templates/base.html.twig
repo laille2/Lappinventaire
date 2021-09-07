@@ -26,18 +26,21 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link active" >Accueil
+							<a class="nav-link active" href="{{ path('home') }}">Accueil
 								<span class="visually-hidden">(actuel)</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Features</a>
+							<a class="nav-link" href="{{ path('alarm_index') }}">Mes alarmes</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Pricing</a>
+							<a class="nav-link" href="{{ path('collection_entity_index') }}">Mes collections</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">About</a>
+							<a class="nav-link" href="{{ path('collectible_index') }}">Mes possessions</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('message_index') }}">Mes messages</a>
 						</li>
 						<li class="nav-item dropdown dropbtn">
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
