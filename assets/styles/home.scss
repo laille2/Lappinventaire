@@ -39,3 +39,14 @@ div.imageFond {
 .navbar-log {
   margin-right: inherit !important;
 }
+
+.navbar-brand {
+  padding: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--first-rgb);
+}
+
+.dropdown-menu {
+  background-color: var(--first-rgb);
+}

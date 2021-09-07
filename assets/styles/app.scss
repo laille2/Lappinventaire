@@ -1,8 +1,11 @@
-@import "~bootstrap/scss/bootstrap"; 
-
 :root {
     --first-rgb: #f7d49e;
     --second-rgb: #300c0a;
     --third-rgb: 147, 52, 19;
-    --image-ratio: 1920/728;
-  }
+}
+/* 
+$nav-link-color: #f7d49e;
+$navbar-dark-brand-color: #f7d49e;
+$navbar-dark-brand-hover-color: #f7d49e; */
+
+@import "~bootstrap/scss/bootstrap"; 
