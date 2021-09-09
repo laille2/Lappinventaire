@@ -2,11 +2,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link rel="icon" href="{{asset('public/build/images/favicon.ico')}}">
 		<title>
 			{% block title %}Bienvenue !
 			{% endblock %}
 		</title>
-		
+
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -45,18 +46,21 @@
 						</li>
 					</ul>
 					<ul class="navbar-nav me-auto navbar-log">
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('collection_entity_index') }}">Mon compte</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('collection_entity_index') }}">Se connecter</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('collection_entity_index') }}">Se déconnecter</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
-						</li>
+						{% if app.user %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('collection_entity_index') }}">Mon compte</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('collection_entity_index') }}">Se déconnecter</a>
+							</li>
+						{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('collection_entity_index') }}">Se connecter</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
+							</li>
+						{% endif %}
 					</ul>
 					<form class="d-flex">
 						<input class="form-control me-sm-2" type="text" placeholder="Search">
@@ -66,10 +70,16 @@
 			</div>
 		</nav>
 
-		{% block body %}{% endblock %}
+		{% block body %}
+			<div class="imageFond imageTop">
+				<div class="title">
+					<h1 class="title">Lappinventaire</h1>
+				</div>
+			</div>
+		{% endblock %}
 
 		{#TODO : Footer#}
-		<hr />
+		<hr/>
 		<h5>Footer !</h5>
 	</body>
 </html>

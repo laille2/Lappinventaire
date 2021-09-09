@@ -1,12 +1,13 @@
 :root {
-    --first-rgb: #f7d49e;
+    --first-rgb: #ffffd0;
     --second-rgb: #300c0a;
     --third-rgb: 147, 52, 19;
 }
 
-$nav-link-color: #f7d49e;
-$navbar-dark-brand-color: #f7d49e;
-$navbar-dark-brand-hover-color: #f7d49e;
+$first-color: #ffffd0;
+$nav-link-color: $first-color;
+$navbar-dark-brand-color: $first-color;
+$navbar-dark-brand-hover-color: $first-color;
 
 @import "~bootstrap/scss/bootstrap"; 
 
@@ -18,7 +19,8 @@ body {
 .navbar {
   opacity: 0.6;
   background-color: var(--second-rgb) !important; 
-  transition: 1s;
+  height: 75px;
+  transition: 1s ease-in-out;
 }
 
 .navbar:hover {
@@ -39,3 +41,39 @@ body {
 .dropdown-menu {
     background-color: var(--first-rgb);
 }
+
+.btn {
+    color: var(--first-rgb);
+    background-color: var(--second-rgb);
+}
+  
+h1.title {
+    color: var(--first-rgb);
+    padding: 2px;
+    font-style: oblique;
+    text-shadow: 4px 4px 0px var(--second-rgb);
+    opacity: 1;
+    font-size: 250%;
+    transition: 1s 2s;
+}
+  
+h1.title:hover {
+    color: tomato;
+}
+
+.imageFond {
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+  
+.imageTop {
+    background-image: url('../images/books-2463779_1280.jpg');
+}
+
+.imageTop > div {
+    display: flex;
+    place-items: center;
+    height: 75px;
+  }
