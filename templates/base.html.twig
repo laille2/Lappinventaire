@@ -32,19 +32,19 @@
 							</a>
 						</li>
 						{% if app.user %}
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('collection_entity_index') }}">Mon espace</a>
-						</li>
-						<li class="nav-item dropdown dropbtn">
-							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Aller à</a>
-							<div class="dropdown-menu">
-								<a class="dropdown-item" href="{{ path('alarm_index') }}">Mes alarmes</a>
-								<a class="dropdown-item" href="{{ path('message_index') }}">Mes messages</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{{ path('collection_entity_index') }}">Mes collections</a>
-								<a class="dropdown-item" href="{{ path('collectible_index') }}">Mes possessions</a>
-							</div>
-						</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('collection_entity_index') }}">Mon espace</a>
+							</li>
+							<li class="nav-item dropdown dropbtn">
+								<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Aller à</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="{{ path('collection_entity_index') }}">Mes collections</a>
+									<a class="dropdown-item" href="{{ path('collectible_index') }}">Mes possessions</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="{{ path('alarm_index') }}">Mes alarmes</a>
+									<a class="dropdown-item" href="{{ path('message_index') }}">Mes messages</a>
+								</div>
+							</li>
 						{% endif %}
 					</ul>
 					<ul class="navbar-nav me-auto navbar-log">
@@ -72,7 +72,7 @@
 			</div>
 		</nav>
 
-		{% block body %}
+		{% block imageTop %}
 			<div class="imageFond imageTop">
 				<div class="title">
 					<h1 class="title">Lappinventaire</h1>
@@ -80,8 +80,13 @@
 			</div>
 		{% endblock %}
 
-		{#TODO : Footer#}
-		<hr/>
-		<h5>Footer !</h5>
-	</body>
-</html>
+		<div class="content"> {% block body %}{% endblock %}
+			</div>
+
+			{#TODO : Footer#}
+			<div class="footer">
+				<hr/>
+				<h5>Footer !</h5>
+			</div>
+		</body>
+	</html>

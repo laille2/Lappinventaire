@@ -1,6 +1,6 @@
 :root {
-    --first-rgb: #ffffd0;
-    --second-rgb: #300c0a;
+    --first-rgb: 255, 255, 208;
+    --second-rgb: 48, 12, 10;
     --third-rgb: 147, 52, 19;
 }
 
@@ -12,15 +12,15 @@ $navbar-dark-brand-hover-color: $first-color;
 @import "~bootstrap/scss/bootstrap"; 
 
 body {
-    background-color: var(--first-rgb);
-    color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(var(--first-rgb));
+    color: rgb(var(--first-rgb));
 }
 
 .navbar {
-  opacity: 0.6;
-  background-color: var(--second-rgb) !important; 
-  height: 75px;
-  transition: 1s ease-in-out;
+    opacity: 0.6;
+    background-color: rgb(var(--second-rgb)) !important; 
+    height: 75px;
+    transition: 1s ease-in-out;
 }
 
 .navbar:hover {
@@ -35,23 +35,31 @@ body {
     padding: 5px;
     border-style: solid;
     border-width: 2px;
-    border-color: var(--first-rgb);
+    border-color: rgb(var(--first-rgb));
 }
   
 .dropdown-menu {
-    background-color: var(--first-rgb);
+    background-color: rgb(var(--first-rgb));
+}
+
+.content {
+    padding-top: 50px;
+    background-image: url('../images/books-2463779_1280.jpg');
+    background-repeat: repeat;
+    background-position: initial;
+    background-image: linear-gradient(rgba(var(--second-rgb), 0.5), rgba(var(--second-rgb), 0.5)), url('../images/books-2463779_1280.jpg');
 }
 
 .btn {
-    color: var(--first-rgb);
-    background-color: var(--second-rgb);
+    color: rgb(var(--first-rgb));
+    background-color: rgb(var(--second-rgb));
 }
   
 h1.title {
-    color: var(--first-rgb);
+    color: rgb(var(--first-rgb));
     padding: 2px;
     font-style: oblique;
-    text-shadow: 4px 4px 0px var(--second-rgb);
+    text-shadow: 4px 4px 0px rgb(var(--second-rgb));
     opacity: 1;
     font-size: 250%;
     transition: 1s 2s;
@@ -69,11 +77,30 @@ h1.title:hover {
 }
   
 .imageTop {
-    background-image: url('../images/books-2463779_1280.jpg');
+    background-image: url('../images/books-1281581_1920.jpg');
 }
 
 .imageTop > div {
     display: flex;
     place-items: center;
     height: 75px;
-  }
+}
+
+.container {
+    box-shadow: 20px, -20px, 10px;
+    border-radius: 20px;
+    background-image: url('../images/texture-1027559_1920.jpg');
+}
+
+.container > h2 {
+    justify-content: center;
+}
+
+form {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.footer {
+    background-color: rgb(var(--second-rgb));
+}
