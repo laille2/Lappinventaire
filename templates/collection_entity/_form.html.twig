@@ -1,4 +1,7 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div>
+        <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+        <a href="{{ path('collection_entity_index') }}">back to list</a>
+    </div>
 {{ form_end(form) }}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Collectible;
+use App\Entity\Property;
 use App\Form\CollectibleType;
 use App\Repository\CollectibleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -31,6 +32,14 @@ class CollectibleController extends AbstractController
     public function new(Request $request): Response
     {
         $collectible = new Collectible();
+
+        $quantity = new Property();
+        $quantity->setName("Quantité");
+        $quantity->setType("Integer");
+        $quantity->setValue(1);
+
+        $collectible->setPropertiesArray([$quantity]);
+
         $form = $this->createForm(CollectibleType::class, $collectible);
         $form->handleRequest($request);
 

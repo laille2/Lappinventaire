@@ -14,7 +14,6 @@ class CollectionEntityType extends AbstractType
         $builder
             ->add('name')
             ->add('collectibles')
-            ->add('user')
         ;
     }
 

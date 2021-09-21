@@ -7,6 +7,7 @@ class Property
     private $id;
     private $name;
     private $type;
+    private $value;
 
     public function getId(): ?int
     {
@@ -33,6 +34,18 @@ class Property
     public function setType(string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    public function setValue($value): self
+    {
+        $this->value = $value;
 
         return $this;
     }

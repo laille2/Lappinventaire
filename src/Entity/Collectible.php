@@ -39,6 +39,11 @@ class Collectible
      */
     private $alarms;
 
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $propertiesArray = [];
+
     public function __construct()
     {
         $this->collectionEntities = new ArrayCollection();
@@ -124,6 +129,18 @@ class Collectible
         if ($this->alarms->removeElement($alarm)) {
             $alarm->removeCollectible($this);
         }
+
+        return $this;
+    }
+
+    public function getPropertiesArray(): ?array
+    {
+        return $this->propertiesArray;
+    }
+
+    public function setPropertiesArray(array $propertiesArray): self
+    {
+        $this->propertiesArray = $propertiesArray;
 
         return $this;
     }

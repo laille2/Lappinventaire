@@ -17,14 +17,14 @@ body {
 }
 
 .navbar {
-    opacity: 0.6;
+    opacity: 0.5;
     background-color: rgb(var(--second-rgb)) !important; 
     height: 75px;
     transition: 1s ease-in-out;
 }
 
 .navbar:hover {
-  opacity: 0.9;
+  opacity: 1;
 }
   
 .navbar-log {
@@ -44,6 +44,7 @@ body {
 
 .content {
     padding-top: 50px;
+    padding-bottom: 50px;
     background-image: url('../images/books-2463779_1280.jpg');
     background-repeat: repeat;
     background-position: initial;
@@ -87,13 +88,15 @@ h1.title:hover {
 }
 
 .container {
+    padding: 40px;
     box-shadow: 20px, -20px, 10px;
     border-radius: 20px;
     background-image: url('../images/texture-1027559_1920.jpg');
 }
 
 .container > h2 {
-    justify-content: center;
+    text-align: center;
+    margin: 20px;
 }
 
 form {
@@ -103,4 +106,12 @@ form {
 
 .footer {
     background-color: rgb(var(--second-rgb));
+}
+
+button.btn {
+    margin: 20px;
+}
+
+.form-group {
+    margin: 20px;
 }

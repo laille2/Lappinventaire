@@ -1,4 +1,21 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    {{ form_widget(form.name) }}
+
+    <ul class="propertiesArray" data-index="{{ form.propertiesArray|length > 0 ? form.propertiesArray|last.vars.name + 1 : 0 }}" data-prototype="{{ form_widget(form.propertiesArray.vars.prototype)|e('html_attr') }}">
+        {% for property in form.propertiesArray %}
+            <li>
+                {{ form_row(property.name) }} de type {{ form_row(property.type) }} : {{ form_row(property.value) }}
+            </li>
+        {% endfor %}
+    </ul>
+    <button type="button" class="btn add_item_link" data-collection-holder-class="propertiesArray">Ajouter une propriété</button>
+
+    {{ form_widget(form.collectionEntities) }}
+
+    <div>
+        <a class="btn" href="{{ path('collectible_index') }}">Page précédente</a>
+        <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+
 {{ form_end(form) }}
