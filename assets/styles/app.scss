@@ -11,6 +11,12 @@ $navbar-dark-brand-hover-color: $first-color;
 
 @import "~bootstrap/scss/bootstrap"; 
 
+a {
+    background-color: rgb(var(--second-rgb));
+    color: rgb(var(--first-rgb));
+    margin: 20px;
+}
+
 body {
     background-color: rgb(var(--first-rgb));
     color: rgb(var(--first-rgb));
@@ -20,6 +26,21 @@ body {
     opacity: 0.5;
     background-color: rgb(var(--second-rgb)) !important; 
     height: 75px;
+    transition: 1s ease-in-out;
+}
+
+.navbar-collapse {
+    transition: 1s ease-in-out;
+}
+
+.navbar-minimized {
+    opacity: 1 !important;
+    right: auto;
+    transition: 1s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
     transition: 1s ease-in-out;
 }
 

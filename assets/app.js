@@ -10,3 +10,14 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import 'bootstrap';
+
+document.getElementsByClassName('navbar-brand')[0].addEventListener('click', (e) => {
+    if (document.getElementById("navbarColor01").classList.contains("hidden")) {
+        document.getElementById("navbarColor01").classList.replace("hidden", "navbar-collapse");
+        document.getElementsByClassName('navbar')[0].classList.remove("navbar-minimized");
+    } else {
+        document.getElementById("navbarColor01").classList.replace("navbar-collapse", "hidden");
+        document.getElementsByClassName('navbar')[0].classList.add("navbar-minimized");
+    }
+    console.log(document.getElementsByClassName('navbar')[0]);
+});
