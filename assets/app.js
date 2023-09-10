@@ -12,12 +12,16 @@ import './styles/app.scss';
 import 'bootstrap';
 
 document.getElementsByClassName('navbar-brand')[0].addEventListener('click', (e) => {
-    if (document.getElementById("navbarColor01").classList.contains("hidden")) {
-        document.getElementById("navbarColor01").classList.replace("hidden", "navbar-collapse");
-        document.getElementsByClassName('navbar')[0].classList.remove("navbar-minimized");
+
+    let navbarContent = document.getElementById("navbarColor01");
+    let navbarClasses = document.getElementsByClassName('navbar')[0].classList;
+
+    if (navbarContent.classList.contains("hidden")) {
+        navbarContent.classList.replace("hidden", "navbar-collapse");
+        navbarClasses.remove("navbar-minimized");
     } else {
-        document.getElementById("navbarColor01").classList.replace("navbar-collapse", "hidden");
-        document.getElementsByClassName('navbar')[0].classList.add("navbar-minimized");
+        navbarContent.classList.replace("navbar-collapse", "hidden");
+        navbarClasses.add("navbar-minimized");
     }
-    console.log(document.getElementsByClassName('navbar')[0]);
+    console.log(navbarClasses);
 });
